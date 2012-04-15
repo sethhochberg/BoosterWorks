@@ -1,0 +1,25 @@
+Short Term:
+	Flesh out waitlist functionality. Need to be able to move users from shfit->waitlist, waitlist->shift, and delete from waitlist. 
+	Make default setting of list view filtered to future events only
+	Verify that changing profile 'id' field to 'profile_id' did not break anything
+	Ensure all mention of drupal is totally gone
+	Functionality to delete users totally, including clean removal of all user shifts and waitlist data
+
+Prior to fall semester start: 
+	Unify style of all pages, particularly in use of H tags - part of broader facelift, making more use of icons and less developer speak
+	Migrate all model methods to return result_arrays, as opposed to objects
+	Remove unused or redundant model methods
+	Second tier of admin permissions - differentiate between coordinators and administrators
+	Ensure all tables are sortable, ensure all date fields have datepickers
+	Redirect to last viewed screen after auth prompt
+	Replace simple numeric fields in database for is_student and event_type with actual text values
+	All data processing functions, when not being used to prep for templates, should be moved to models
+	Fix PDF exports - slim down font library for TCPDF, if still using as PDF class
+	
+Prior to v1.0 / Public Release
+	Flesh out full configuration options for site title, various lang/phrase features (email templates, assorted other site messages)
+	Installer script to create database schema and collect initial setting values
+	Total removal of templating (eg, $data['view']['title']) from controllers
+	Customizable template via adminCP
+	Move icons off dustball CDN
+	
