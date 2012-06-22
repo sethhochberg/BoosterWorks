@@ -391,7 +391,7 @@ class Users extends CI_Model
 	private function delete_profile($user_id)
 	{
 		$this->db->where('user_id', $user_id);
-		$this->db->delete($this->profile_table_name);
+		$this->db->delete('profiles');
 	}
 }
 
