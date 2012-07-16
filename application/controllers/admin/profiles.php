@@ -97,7 +97,8 @@ class Profiles extends CI_Controller
 					       	'is_student' => set_value('is_student'),
 					       	'carpool' => set_value('carpool'),
 					       	'primary_phone' => set_value('primary_phone'),
-					       	'family_group' => set_value('family_group')
+					       	'family_group' => set_value('family_group'),
+					       	'active' => set_value('active')
 						);
 			$sec_mail = set_value('secondary_email');
 			if(!empty($sec_mail))
@@ -235,6 +236,7 @@ class Profiles extends CI_Controller
 		$this->form_validation->set_rules('primary_phone','Primary Phone','required|trim|xss_clean|is_numeric|max_length[20]');			
 		$this->form_validation->set_rules('secondary_phone','Secondary Phone','xss_clean|is_numeric|max_length[20]');
 		$this->form_validation->set_rules('family_group','Family/Group Name','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('active','Is Active?','required|xss_clean|max_length[11]');						
 		$this->form_validation->set_rules('submit_button', 'Submit', '');
 		$this->form_validation->set_error_delimiters('<span class="error" style="float:right;">', '</span>');
 	}

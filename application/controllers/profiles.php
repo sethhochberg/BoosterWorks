@@ -36,8 +36,8 @@ class Profiles extends CI_Controller {
 		else
 		{
 			$user= $this->_get_user();
-			$this->email->from('boosterworks@tarponspringsband.com', 'Boosterworksn');
-			$this->email->to('seth@sethhochberg.com');
+			$this->email->from('boosterworks@tarponspringsband.com', 'Boosterworks');
+			$this->email->to('hochberg.jeff@gmail.com');
 			$this->email->subject('Family/Group Change Requested');
 			$this->email->message("User " . $user->first_name . ' ' .  $user->last_name . " has requested a change to thier family group. Please follow up with them via email at " . $user->primary_email);
 			$this->email->send();
@@ -71,7 +71,8 @@ class Profiles extends CI_Controller {
 		$this->form_validation->set_rules('is_student','Is Student?','required|xss_clean|max_length[11]');			
 		//$this->form_validation->set_rules('carpool','Carpool?','required|max_length[11]');			
 		$this->form_validation->set_rules('primary_phone','Primary Phone','required|trim|xss_clean|is_numeric|max_length[20]');			
-		$this->form_validation->set_rules('secondary_phone','Secondary Phone','xss_clean|is_numeric|max_length[20]');			
+		$this->form_validation->set_rules('secondary_phone','Secondary Phone','xss_clean|is_numeric|max_length[20]');	
+		
 		$this->form_validation->set_rules('submit_button', 'Submit', '');
 			
 		$this->form_validation->set_error_delimiters('<br /><span style="color: red;">', '</span>');

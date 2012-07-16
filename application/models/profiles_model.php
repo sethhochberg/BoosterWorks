@@ -74,6 +74,7 @@ class Profiles_model extends CI_Model {
 		$this->db->select('profiles.first_name, profiles.last_name, profiles.secondary_email, users.email');
 		$this->db->from('profiles');
 		$this->db->join('users', 'profiles.user_id= users.id');
+		$this->db->where('profiles.active', '1');
 		$q = $this->db->get();
 		return $q->result_array();
 	}

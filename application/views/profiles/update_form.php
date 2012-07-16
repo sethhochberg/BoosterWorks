@@ -77,6 +77,7 @@ echo form_open('profiles/update'); ?>
 				<?php echo form_error('secondary_phone'); ?>
 				<br /><input id="secondary_phone" type="text" name="secondary_phone" maxlength="20" value="<?php echo set_value('secondary_phone', $secondary_phone); ?>"  />
 		</p>
+		
 </fieldset>
 
 <hr class="space"></hr>

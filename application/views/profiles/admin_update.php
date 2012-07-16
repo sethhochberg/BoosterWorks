@@ -79,6 +79,17 @@ echo $form_open ?>
 				<?php echo form_error('secondary_phone'); ?>
 				<br /><input id="secondary_phone" type="text" name="secondary_phone" maxlength="20" value="<?php echo set_value('secondary_phone', $secondary_phone); ?>"  />
 		</p>
+		<p>
+				<label for="active">Is this an active account? <span class="required">*</span></label>
+				<?php echo form_error('active'); ?>
+				<br />
+						<?php $active_options = array(
+														  ''  => 'Please Select',
+														  '0'    => 'No',
+														  '1'    => 'Yes'
+														); ?>
+						<?=form_dropdown('active', $active_options, set_value('active', $active))?>
+		</p>
 </fieldset>
 
 <hr class="space"></hr>
