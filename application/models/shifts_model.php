@@ -180,7 +180,7 @@ class Shifts_model extends CI_Model {
 	{
 		//fetch details for the waitlist slot we're trying to match an open confirmed slot to
 		$this->db->where('id', $id);
-		$this->db->select('user_id,event_id');
+		//$this->db->select('user_id,event_id');
 		$target = $this->db->get('wait_list')->result_array();
 		$this->db->flush_cache();
 		
@@ -193,6 +193,7 @@ class Shifts_model extends CI_Model {
 		//if there are available shifts, take the first shift and assign it to our waitlisted user
 		if(!empty($available))
 		{
+			$this->db->trans_start();
 			//move to shift
 			$shift_id = $available['0']['shift_id'];
 			$shift_relationships['user_id'] = $target['0']['user_id'];
@@ -200,11 +201,21 @@ class Shifts_model extends CI_Model {
 			$this->db->update('shift_relationships', $shift_relationships);
 			$this->db->flush_cache();
 
+			$new_shift['shift_for'] = $target['0']['shift_for'];
+			$new_shift['transportation'] = $target['0']['transportation'];
+			$this->db->where('shift_id', $shift_id);
+			$this->db->update('shifts', $new_shift);
+			$this->db->flush_cache();
+
 			//remove waitlist slot
 			$this->db->where('id', $id);
 			$this->db->delete('wait_list');
 
-			$result['success'] = TRUE;
+			$this->db->trans_complete();	
+			if ($this->db->trans_status() === TRUE)
+				$result['success'] = TRUE;
+			else
+				$result['success'] = FALSE;
 		}
 		else
 		{

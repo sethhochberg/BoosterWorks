@@ -64,8 +64,8 @@
 			</div>
 			<div id="footer" align="center">				
 			<hr />
-			<p class="small">Page generated in {elapsed_time} seconds with <?php echo $this->db->total_queries(); ?>  queries and using {memory_usage} of memory at <?php $now = time(); $timezone = 'UM5'; $daylight_saving = TRUE; $now = gmt_to_local($now, $timezone, $daylight_saving); echo unix_to_human($now, TRUE, 'us'); ?></p>
-			<p class="small">This is BoosterWorks v0.61, released Aug 27th 2011</p>
+			<!--<p class="small">Page generated in {elapsed_time} seconds with <?php echo $this->db->total_queries(); ?>  queries and using {memory_usage} of memory at <?php $now = time(); $timezone = 'UM5'; $daylight_saving = TRUE; $now = gmt_to_local($now, $timezone, $daylight_saving); echo unix_to_human($now, TRUE, 'us'); ?></p>-->
+			<p class="small">This is BoosterWorks v0.63, released July 19th 2012</p>
 			<? if($this->Profiles_model->is_admin() == TRUE)
 					{ 
 						echo('<p><a href="' . base_url() . 'index.php/admin/dashboard">Administrator Control Panel</a></p>');

@@ -1,4 +1,26 @@
 ---------------------------------------------------------------------------------------------------
+Bugfix Release - July 19th 2012
+
+Boosterworks v0.63 Known Issues:
+No known issues
+
+Current version bugfixes:
+	Fixed an error that could cause loss of the "shift for" field when moving a waitlisted user into the confirmed roster for an event
+
+Current version new features:
+
+---------------------------------------------------------------------------------------------------
+Feature Release - July 15th 2012
+
+Boosterworks v0.62 Known Issues:
+	No known issues
+
+Current version bugfixes:
+
+Current version new features:
+	Added option for an admin to make an account inactive. Inactive accounts will not recieve broadcast emails, except for events they have already signed up for.
+
+---------------------------------------------------------------------------------------------------
 Bigfix Release - August 27th 2011
 
 Boosterworks v0.61 Known Issues: 
