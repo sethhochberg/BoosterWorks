@@ -107,7 +107,7 @@ class Events extends CI_Controller
 	
 	function listing()
 	{
-		$filter_string = ""; //initialize the filters to none
+		$filter_string = "dates=future"; //initialize the filters to empty, showing new events only by default
 		$config['per_page'] = '15'; //set the default results per page
 		$data['view']['title'] = 'Events Listing';
 
@@ -169,7 +169,7 @@ class Events extends CI_Controller
 
 				
 		$data['event_types'] = array('type=void' => 'All Event Types', 'type=0' => 'Tropicana Field Concessions', 'type=1' => 'Raymond James Stadium Concessions', 'type=2' => 'Student Tag Day', 'type=3' => 'Renaissance Festival', 'type=4' => 'Golf Tournament Parking', 'type=5' => 'Other');		
-		$data['date_ranges'] = array('dates=all' => 'All Dates', 'dates=past' => 'Past Events Only', 'dates=future' => 'Future Events Only');
+		$data['date_ranges'] = array('dates=future' => 'Future Events Only', 'dates=past' => 'Past Events Only', 'dates=all' => 'All Dates');
 
 		$data['links'] = $this->pagination->create_links();
 		$data['tablesortjs'] = '<script type="text/javascript" src="' . base_url() . 'assets/js/jquery.tablesorter.min.js"></script>	
